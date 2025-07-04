@@ -27,11 +27,11 @@ O objetivo é mostrar na prática como um usuário malicioso pode alterar atribu
 
 ```bash
 git clone https://github.com/seu-usuario/mass-assignment-flask-demo.git
-cd mass-assignment-flask-demo´´´
+cd mass-assignment-flask-demo
 
+2. Crie e ative um ambiente virtual (opcional, mas recomendado):
 
 ```bash
-
 python -m venv venv
 source venv/bin/activate    # Linux/macOS
 venv\Scripts\activate       # Windows
