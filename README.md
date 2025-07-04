@@ -7,8 +7,8 @@ Este projeto demonstra como uma aplicação web pode ser vulnerável a um ataque
 
 Um cenário simples foi criado usando o microframework **Flask** em Python. A aplicação possui duas versões:
 
-- `app_vulneravel.py`: versão com **falha de segurança**
-- `app_corrigido.py`: versão **corrigida**, utilizando whitelisting
+- `ataque.py`: versão com **falha de segurança**
+- `correção.py`: versão **corrigida**, utilizando whitelisting
 
 O objetivo é mostrar na prática como um usuário malicioso pode alterar atributos sensíveis (`is_admin`) manipulando os dados enviados ao servidor.
 
