@@ -26,7 +26,7 @@ O objetivo é mostrar na prática como um usuário malicioso pode alterar atribu
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/mass-assignment-flask-demo.git
+git clone https://github.com/thainanunesf/Mass-Assignment-Attack.git
 cd mass-assignment-flask-demo
 
 ```
