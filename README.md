@@ -80,6 +80,8 @@ curl -X POST http://127.0.0.1:5000/update \
 ````
 📌 Resultado: is_admin permanece False — tentativa de ataque fracassada
 
+---
+## Pablo Miranda - Thainá Cassiano - Thiago Amancio - Vinicius Rodrigues
 
 
 
