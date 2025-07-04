@@ -29,10 +29,64 @@ O objetivo é mostrar na prática como um usuário malicioso pode alterar atribu
 git clone https://github.com/seu-usuario/mass-assignment-flask-demo.git
 cd mass-assignment-flask-demo
 
-2. Crie e ative um ambiente virtual (opcional, mas recomendado):
+```
 
+3. Crie e ative um ambiente virtual (opcional, mas recomendado):
 ```bash
 python -m venv venv
 source venv/bin/activate    # Linux/macOS
 venv\Scripts\activate       # Windows
+```
+5. Instale as dependências:
+```bash
+ pip install flask
+````
+
+## 🚀 Como Executar
+Você pode testar tanto a versão vulnerável quanto a corrigida separadamente.
+
+🔓 Versão Vulnerável
+```bash
+python ataque.py
+```
+Acesse: http://127.0.0.1:5000
+
+---
+
+Teste o ataque com curl:
+````bash
+curl -X POST http://127.0.0.1:5000/update \
+-d "nome=Atacante" \
+-d "email=atacante@hack.com" \
+-d "is_admin=true"
+
+`````
+📌 Resultado: o usuário se torna admin (is_admin: true)
+
+---
+🔐 Versão Corrigida:
+```bash
+python correção.py
+```
+Acesse: http://127.0.0.1:5000
+
+---
+Teste o ataque com curl:
+````bash
+curl -X POST http://127.0.0.1:5000/update \
+-d "nome=Atacante" \
+-d "email=atacante@hack.com" \
+-d "is_admin=true"
+````
+📌 Resultado: is_admin permanece False — tentativa de ataque fracassada
+
+
+
+
+
+
+
+
+
+
 
