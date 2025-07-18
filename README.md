@@ -53,12 +53,19 @@ Acesse: http://127.0.0.1:5000
 
 ---
 
-Teste o ataque com curl:
+Teste o ataque com postman:
+1- Abra o Postman.
+---
+2-Crie uma nova requisição POST para:
+
+http://127.0.0.1:5000/update
+
+3- Vá até a aba Body > x-www-form-urlencoded
+
 ````bash
-curl -X POST http://127.0.0.1:5000/update \
--d "nome=Atacante" \
--d "email=atacante@hack.com" \
--d "is_admin=true"
+nome: Atacante
+email: atacante@hack.com
+is_admin: true
 
 `````
 📌 Resultado: o usuário se torna admin (is_admin: true)
@@ -71,12 +78,12 @@ python correção.py
 Acesse: http://127.0.0.1:5000
 
 ---
-Teste o ataque com curl:
+Teste o ataque com postman da mesma forma como foi testado o ataque no arquivo vulnerável.
+
 ````bash
-curl -X POST http://127.0.0.1:5000/update \
--d "nome=Atacante" \
--d "email=atacante@hack.com" \
--d "is_admin=true"
+nome: Atacante
+email: atacante@hack.com
+is_admin: true
 ````
 📌 Resultado: is_admin permanece False — tentativa de ataque fracassada
 
