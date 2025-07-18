@@ -3,6 +3,15 @@
 
 Este projeto demonstra como uma aplicação web pode ser vulnerável a um ataque de **Atribuição em Massa (Mass Assignment)** e como mitigar esse risco com boas práticas de programação.
 
+
+## 📚 O Que é Mass Assignment?
+
+**Mass Assignment** é uma técnica que permite atualizar múltiplos atributos de um objeto diretamente a partir de um dicionário ou payload HTTP.
+
+A vulnerabilidade ocorre quando o servidor aceita e aplica _todos_ os campos recebidos — inclusive os que o usuário **não deveria modificar** — como `is_admin`.
+
+---
+
 ## 📚 Sobre o Projeto
 
 Um cenário simples foi criado usando o microframework **Flask** em Python. A aplicação possui duas versões:
@@ -18,6 +27,7 @@ O objetivo é mostrar na prática como um usuário malicioso pode alterar atribu
 
 - Python 3.8+
 - pip
+- postman
 
 ---
 
@@ -53,14 +63,16 @@ Acesse: http://127.0.0.1:5000
 
 ---
 
-Teste o ataque com postman:
-1- Abra o Postman.
----
-2-Crie uma nova requisição POST para:
+# Teste o ataque com postman:
+
+
+1. Abra o Postman.
+
+2. Crie uma nova requisição POST para:
 
 http://127.0.0.1:5000/update
 
-3- Vá até a aba Body > x-www-form-urlencoded
+3. Vá até a aba Body > x-www-form-urlencoded
 
 ````bash
 nome: Atacante
@@ -78,13 +90,20 @@ python correção.py
 Acesse: http://127.0.0.1:5000
 
 ---
-Teste o ataque com postman da mesma forma como foi testado o ataque no arquivo vulnerável.
+# Teste o ataque com postman da mesma forma como foi testado o ataque no arquivo vulnerável.
+1. Abra o Postman.
+2. Crie uma nova requisição POST para:
+
+http://127.0.0.1:5000/update
+
+3. Vá até a aba Body > x-www-form-urlencoded
 
 ````bash
 nome: Atacante
 email: atacante@hack.com
 is_admin: true
 ````
+
 📌 Resultado: is_admin permanece False — tentativa de ataque fracassada
 
 ---
